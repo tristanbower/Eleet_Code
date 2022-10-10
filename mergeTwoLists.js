@@ -61,20 +61,18 @@ function Node(data, next) {
 
 var mergeTwoLists = function (list1, list2) {
   // Create new linked list pointer
-  var list3 = new Node(null, null);
-  var prev = list3;
+  var prev = (list3 = new Node(null, null));
 
   //while both linked lists are not empty
-  while (list1 !== null && list2 !== null) {
-    if (list1.data <= list2.data) {
-      prev.next = list1;
+  while (list1 && list2) {
+    if (list1.data < list2.data) {
+      list3.next = list1;
       list1 = list1.next;
     } else {
-      prev.next = list2;
+      list3.next = list2;
       list2 = list2.next;
     }
-    prev = prev.next;
-    console.log(prev.next);
+    list3 = list3.next;
   }
   //   if (list1 === null) {
   //     prev.next = list2;
@@ -83,8 +81,8 @@ var mergeTwoLists = function (list1, list2) {
   //     prev.next = list1;
   //   }
   //   console.log(list3.next);
-  prev.next = list1 || list2;
-  return list3.next;
+  list3.next = list1 || list2;
+  return prev.next;
 };
 
 var n3 = new Node(4, null);
