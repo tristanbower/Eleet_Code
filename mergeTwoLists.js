@@ -55,8 +55,8 @@ getFirst() {
 }
 */
 function Node(data, next) {
-  this.data = data;
-  this.next = next;
+  this.data = data = data === undefined ? 0 : data;
+  this.next = next = next === undefined ? null : next;
 }
 
 var mergeTwoLists = function (list1, list2) {
@@ -96,4 +96,5 @@ var n5 = new Node(3, n6);
 var n4 = new Node(1, n5);
 var L2 = n4;
 
-mergeTwoLists(L1, L2);
+twolists = mergeTwoLists(L1, L2);
+console.log(twolists);
