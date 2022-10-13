@@ -1,3 +1,4 @@
+//Easy diff
 /**
  * @param {number[]} nums
  * @return {boolean}
