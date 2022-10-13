@@ -1,3 +1,4 @@
+//Easy diff
 /**
  * @param {string} s
  * @return {boolean}
